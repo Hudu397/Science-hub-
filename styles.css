@@ -1,0 +1,266 @@
+/* Global Base Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  scroll-behavior: smooth;
+}
+h1, h2, h3, p {
+  margin: 0.5em 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+/* FadeIn Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Header */
+header {
+  background: #0073e6;
+  color: #fff;
+  padding: 1em 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2em;
+  margin-bottom: 0.2em;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav ul li {
+  margin: 0 0.8em;
+}
+nav ul li a {
+  color: #fff;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #ff9800;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3em 1em;
+  background: linear-gradient(135deg, #0073e6, #00c6ff);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s;
+}
+button, .btn {
+  font-family: 'Orbitron', sans-serif;
+  padding: 0.8em 1.5em;
+  background: #ff9800;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  border-radius: 30px;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+button:hover, .btn:hover {
+  background: #e07a00;
+  transform: scale(1.05);
+}
+
+/* Subjects Grid & Cards */
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  padding: 2em 1em;
+}
+.subject-card {
+  background: #fff;
+  padding: 1.2em;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+.subject-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.subject-card h3 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.6em;
+  margin-bottom: 0.3em;
+}
+.subject-card p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 0.8em;
+}
+
+/* Intro Section */
+.intro {
+  background: #0073e6;
+  color: #fff;
+  padding: 2em 1em;
+  font-family: 'Lora', serif;
+}
+.intro h2 {
+  font-size: 2.2em;
+}
+.intro p {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+/* Video Section */
+.video-section {
+  padding: 2em 1em;
+  background: #fff;
+}
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+.video-box {
+  width: 100%;
+  max-width: 420px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.video-box:hover {
+  transform: scale(1.03);
+}
+.video-box iframe {
+  width: 100%;
+  height: 240px;
+  border: none;
+}
+.video-box .video-info {
+  padding: 0.8em;
+  background: #f9f9f9;
+  text-align: left;
+}
+.video-box .video-info h4 {
+  font-size: 1.2em;
+  margin-bottom: 0.4em;
+}
+.video-box .video-info p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 1em 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 { font-size: 1.8em; }
+  nav ul li a { font-size: 1em; }
+  .hero h2 { font-size: 2em; }
+}
+
+/* Unique Subject Styling */
+/* Computer Science (Montserrat, purple gradient) */
+body.computer-science {
+  font-family: 'Montserrat', sans-serif;
+}
+body.computer-science .hero {
+  background: linear-gradient(135deg, #4a148c, #7b1fa2);
+}
+body.computer-science .intro {
+  background: #4a148c;
+}
+
+/* ICT (Orbitron, teal gradient) */
+body.ict {
+  font-family: 'Orbitron', sans-serif;
+}
+body.ict .hero {
+  background: linear-gradient(135deg, #00695c, #00897b);
+}
+body.ict .intro {
+  background: #00695c;
+}
+
+/* Mathematics (Roboto, blue gradient) */
+body.mathematics {
+  font-family: 'Roboto', sans-serif;
+}
+body.mathematics .hero {
+  background: linear-gradient(135deg, #283593, #3f51b5);
+}
+body.mathematics .intro {
+  background: #283593;
+}
+
+/* Physics (Roboto, navy gradient) */
+body.physics {
+  font-family: 'Roboto', sans-serif;
+}
+body.physics .hero {
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+}
+body.physics .intro {
+  background: #0d47a1;
+}
+
+/* Biology (Lora, forest green gradient) */
+body.biology {
+  font-family: 'Lora', serif;
+}
+body.biology .hero {
+  background: linear-gradient(135deg, #1b5e20, #388e3c);
+}
+body.biology .intro {
+  background: #1b5e20;
+}
+
+/* Chemistry (Merriweather, red gradient) */
+body.chemistry {
+  font-family: 'Merriweather', serif;
+}
+body.chemistry .hero {
+  background: linear-gradient(135deg, #b71c1c, #e53935);
+}
+body.chemistry .intro {
+  background: #b71c1c;
+}
